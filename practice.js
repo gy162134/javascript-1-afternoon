@@ -21,7 +21,7 @@ var newGreeting = function(name){return "Hello  " + name};
 //Rewrite the function greeting as an arrow function.
 //Name it finalGreeting.
 
-var finalGreeting = function(name) => {"Hello " + name ;}
+var finalGreeting = (name) => {"Hello " + name };
 
 //////////////////PROBLEM 4////////////////////
 
