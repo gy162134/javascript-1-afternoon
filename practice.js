@@ -6,7 +6,7 @@
 //plus the value of the name parameter.
 
 function greeting(name){
-  return "Hello " + name;
+  return "Hello, " + name;
 }
 
 //////////////////PROBLEM 2////////////////////
@@ -14,21 +14,21 @@ function greeting(name){
 //Rewrite the function greeting as a function expression.
 //Name it newGreeting.
 
-var newGreeting = function(name){return "Hello  " + name};
+var newGreeting = function(name){return "Hello, " + name};
 
 //////////////////PROBLEM 3////////////////////
 
 //Rewrite the function greeting as an arrow function.
 //Name it finalGreeting.
 
-var finalGreeting = (name) => {"Hello " + name };
+var finalGreeting = (name) => {return "Hello, " + name };
 
 //////////////////PROBLEM 4////////////////////
 
 //Create an array called groceries with the values
 //"apples", "milk", "eggs", "bread"
 
-var groceries = [apples, milk, eggs, bread];
+var groceries = ["apples", "milk", "eggs", "bread"];
 
 //Write a function called doubleCheck that takes in an array
 //as a parameter.
@@ -57,22 +57,21 @@ var dog = {
   color: "Brown",
   age: 3,
   goodBoy: true
-
 };
 
 //...access the dog's name from the object and assign it to a
 //variable called devMountainClassPet.
 
+var devMountainClassPet = "Scooby";
 dog.name = devMountainClassPet;
 
 //Add a method to dog called bark.
 //The value of bark should be a function that returns the string "Woof woof".
 
-var bark = () => {"Woof woof"};
-
+dog.bark = function(){return "Woof woof"};
 //Store the result of invoking the bark method in a variable called ruff.
 
-dog.ruff = bark();
+var ruff = dog.bark();
 
 //////////////////PROBLEM 6////////////////////
 
@@ -87,11 +86,15 @@ dog.ruff = bark();
 
 function looper(arr){
   var mySum = 0;
-  for(var num in arr){
-    if(num >= 100 || num%2 != 0){
-      mySum += num;
+  for(i=0;i<arr.length;i++){
+    if(arr[i]>= 100){
+      mySum = mySum + arr[i];
+    }
+    else if(arr[i]%2 != 0){
+      mySum = mySum + arr[i];
     }
   }
+  return mySum;
 }
 
 //////////////////PROBLEM 7////////////////////
@@ -179,4 +182,4 @@ var innerFn = outerFn();
 
 //Now invoke innerFn and save the result to a variable called finalResult.
 
-//Code Here
+var finalResult = innerFn();
